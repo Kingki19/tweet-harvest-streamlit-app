@@ -4,6 +4,10 @@ import pandas as pd
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 import shutil
+import os
+
+os.system('playwright install')
+os.system('playwright install-deps')
 
 def install_npm_and_tweet_harvest():
     # Perintah instalasi (contoh untuk Ubuntu/Debian)
