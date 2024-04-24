@@ -1,4 +1,4 @@
-nodejs
+nodejs==14
 npm
 libnss3
 libnspr4
