@@ -2,4 +2,4 @@ streamlit
 pandas
 pyxlsb
 XlsxWriter
-nodejs-bin[cmd]
+nodejs-bin
