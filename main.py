@@ -27,7 +27,7 @@ def run_tweet_harvest(options, search_keyword):
     # command = [nodejs_bin_path, "cmd", "npx", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
     command = ["npx", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
     result = subprocess.run(command, capture_output=True, text=True)
-
+    st.write(result)
     if result.returncode == 0:
         st.success("Skrip berhasil dijalankan!")
         try:
@@ -101,8 +101,8 @@ if st.button("Instal npm dan tweet-harvest", disabled=True):
 if st.button("Jalankan"):
     run_tweet_harvest(options, search_keyword)
 
-nodejs_bin_path = shutil.which("node")
-if nodejs_bin_path:
-    st.write(f"Path ke nodejs-bin: {nodejs_bin_path}")
-else:
-    st.write("nodejs-bin tidak ditemukan.")
+# nodejs_bin_path = shutil.which("node")
+# if nodejs_bin_path:
+#     st.write(f"Path ke nodejs-bin: {nodejs_bin_path}")
+# else:
+#     st.write("nodejs-bin tidak ditemukan.")
