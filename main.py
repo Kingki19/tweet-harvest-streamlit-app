@@ -22,7 +22,7 @@ def install_npm_and_tweet_harvest():
 
 def run_tweet_harvest(options, search_keyword):
     """Dibangun berdasarkan skrip ini: https://github.com/helmisatria/tweet-harvest"""
-    command = ["npx", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
+    command = ["nodejs-bin", "cmd", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
     result = subprocess.run(command, capture_output=True, text=True)
 
     if result.returncode == 0:
