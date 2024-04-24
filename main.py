@@ -7,7 +7,6 @@ from pyxlsb import open_workbook as open_xlsb
 def install_npm_and_tweet_harvest():
     # Perintah instalasi (contoh untuk Ubuntu/Debian)
     commands = [
-        "apt update",
         "apt install npm",
         "npm install -g tweet-harvest"
     ]
