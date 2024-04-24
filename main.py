@@ -4,6 +4,23 @@ import pandas as pd
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 
+def install_npm_and_tweet_harvest():
+    # Perintah instalasi (contoh untuk Ubuntu/Debian)
+    commands = [
+        "sudo apt update",
+        "sudo apt install npm",
+        "sudo npm install -g tweet-harvest"
+    ]
+
+    for command in commands:
+        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        if result.returncode != 0:
+            st.error(f"Error menjalankan perintah: {command}\n{result.stderr}")
+            return False
+    
+    st.success("npm dan tweet-harvest berhasil diinstal!")
+    return True
+
 def run_tweet_harvest(options, search_keyword):
     """Dibangun berdasarkan skrip ini: https://github.com/helmisatria/tweet-harvest"""
     command = ["npx", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
@@ -75,6 +92,9 @@ options.extend(["-l", str(limit)])
 options.extend(["-d", str(delay)])
 options.extend(["--tab", tab])
 
+st.write('Sebelum menjalankan, tekan tombol dibawah. (tekan satu kali)')
+if st.button("Instal npm dan tweet-harvest"):
+    install_npm_and_tweet_harvest()
 # Tombol jalankan
 if st.button("Jalankan"):
     run_tweet_harvest(options, search_keyword)
