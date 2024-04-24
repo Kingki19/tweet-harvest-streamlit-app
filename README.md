@@ -1,5 +1,8 @@
 # tweet harvest streamlit app
 I made this based on [tweet-harvest](https://github.com/helmisatria/tweet-harvest) script from [@helmisatria](https://github.com/helmisatria) and to help my lecturer download data from Twitter using streamlit app
 
-Message for my future self"
-In April 24, 2024. I cant make it sure to works because tweet-harvest use playwright use node.js version 14 but streamlit community cloud only installed on version 12.6. That mean it impossible for right now. You need to fix it when Streamlit update version of their node.js
+Message for my future self:  
+In April 24, 2024. I cant make it sure to works because tweet-harvest use playwright use node.js version 14 but streamlit community cloud only installed on version 12.22.12. That mean it impossible for right now. You need to fix it when Streamlit update version of their node.js
+
+Error message:  
+`CompletedProcess(args=['npx', '--yes', 'tweet-harvest@2.6.0', '-t', 'cb035fa6455fb943fdc81dd3c7071c4911c6604a', '-f', '01-04-2024', '--to', '24-04-2024', '-s', 'jokowi', '-l', '100', '-d', '1', '--tab', 'TOP'], returncode=1, stdout='', stderr='npm WARN using --force Recommended protections disabled.\nnpm ERR! code 1\nnpm ERR! path /home/appuser/.npm/_npx/ae02b68c4a80aeb9/node_modules/tweet-harvest\nnpm ERR! command failed\nnpm ERR! command sh -c npx playwright install chromium\nnpm ERR! npm WARN using --force Recommended protections disabled.\nnpm ERR! You are running Node.js 12.22.12.\nnpm ERR! Playwright requires Node.js 14 or higher. \nnpm ERR! Please update your version of Node.js.\nnpm ERR! npm ERR! code 1\nnpm ERR! npm ERR! path /home/appuser/.npm/_npx/ae02b68c4a80aeb9/node_modules/tweet-harvest\nnpm ERR! npm ERR! command failed\nnpm ERR! npm ERR! command sh -c playwright "install" "chromium"\nnpm ERR! \nnpm ERR! npm ERR! A complete log of this run can be found in:\nnpm ERR! npm ERR! /home/appuser/.npm/_logs/2024-04-24T13_59_46_545Z-debug.log\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR! /home/appuser/.npm/_logs/2024-04-24T13_59_46_799Z-debug.log\n')`
