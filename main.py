@@ -94,7 +94,7 @@ options.extend(["-d", str(delay)])
 options.extend(["--tab", tab])
 
 st.write('Sebelum menjalankan, tekan tombol dibawah. (tekan satu kali)')
-if st.button("Instal npm dan tweet-harvest", disable=True):
+if st.button("Instal npm dan tweet-harvest", disabled=True):
     install_npm_and_tweet_harvest()
 # Tombol jalankan
 if st.button("Jalankan"):
