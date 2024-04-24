@@ -3,4 +3,3 @@ pandas
 pyxlsb
 XlsxWriter
 nodejs-bin
-shutil
