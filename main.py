@@ -23,7 +23,8 @@ def install_npm_and_tweet_harvest():
 
 def run_tweet_harvest(options, search_keyword):
     """Dibangun berdasarkan skrip ini: https://github.com/helmisatria/tweet-harvest"""
-    command = ["nodejs-bin", "cmd", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
+    nodejs_bin_path = "/usr/bin/node"  
+    command = [nodejs_bin_path, "cmd", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
     result = subprocess.run(command, capture_output=True, text=True)
 
     if result.returncode == 0:
@@ -93,7 +94,7 @@ options.extend(["-d", str(delay)])
 options.extend(["--tab", tab])
 
 st.write('Sebelum menjalankan, tekan tombol dibawah. (tekan satu kali)')
-if st.button("Instal npm dan tweet-harvest"):
+if st.button("Instal npm dan tweet-harvest", disable=True):
     install_npm_and_tweet_harvest()
 # Tombol jalankan
 if st.button("Jalankan"):
