@@ -44,7 +44,7 @@ with st.popover("Tutorial Cara Mendapatkan Otentikasi Twitter"):
     5. Di bagian dalam kolom 'name', cari 'auth_token' lalu copy paste value dari 'auth_token' ini ke sini.  
     """)
 search_keyword = st.text_input("Kata Kunci Pencarian:")
-filename = st.text_input("Nama File Excel Output:", value="tweets.xlsx")
+filename = st.text_input("Nama File Excel Output:", value="tweets{search keyword yang digunakan}.xlsx")
 
 # Input tanggal
 from_date = st.date_input("Tanggal Mulai (DD-MM-YYYY):")
