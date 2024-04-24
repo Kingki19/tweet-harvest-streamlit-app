@@ -4,7 +4,7 @@ import pandas as pd
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 
-def run_tweet_harvest(options):
+def run_tweet_harvest(options, search_keyword):
     """Dibangun berdasarkan skrip ini: https://github.com/helmisatria/tweet-harvest"""
     command = ["npx", "--yes", "tweet-harvest@2.6.0"] + options # Semisal ada eror ganti versi ganti ini aja nanti.
     result = subprocess.run(command, capture_output=True, text=True)
@@ -23,7 +23,7 @@ def run_tweet_harvest(options):
             st.download_button(
                 label="Download Data sebagai Excel",
                 data=towrite,
-                file_name='tweets.xlsx',
+                file_name = f"tweets:{search_keyword}.xlsx",
                 mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
             )
         except:
@@ -44,7 +44,7 @@ with st.popover("Tutorial Cara Mendapatkan Otentikasi Twitter"):
     5. Di bagian dalam kolom 'name', cari 'auth_token' lalu copy paste value dari 'auth_token' ini ke sini.  
     """)
 search_keyword = st.text_input("Kata Kunci Pencarian:")
-filename = st.text_input("Nama File Output:", value="tweets.json")
+filename = st.text_input("Nama File Excel Output:", value="tweets.xlsx")
 
 # Input tanggal
 from_date = st.date_input("Tanggal Mulai (DD-MM-YYYY):")
@@ -79,4 +79,4 @@ options.extend(["--tab", tab])
 
 # Tombol jalankan
 if st.button("Jalankan"):
-    run_tweet_harvest(options)
+    run_tweet_harvest(options, search_keyword)
