@@ -3,6 +3,7 @@ import subprocess
 import pandas as pd
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
+import shutil
 
 def install_npm_and_tweet_harvest():
     # Perintah instalasi (contoh untuk Ubuntu/Debian)
@@ -97,3 +98,9 @@ if st.button("Instal npm dan tweet-harvest"):
 # Tombol jalankan
 if st.button("Jalankan"):
     run_tweet_harvest(options, search_keyword)
+
+nodejs_bin_path = shutil.which("node")
+if nodejs_bin_path:
+    st.write(f"Path ke nodejs-bin: {nodejs_bin_path}")
+else:
+    st.write("nodejs-bin tidak ditemukan.")
